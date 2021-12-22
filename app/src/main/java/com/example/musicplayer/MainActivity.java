@@ -58,10 +58,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void previous(View view) {
-
+        seekBar.setProgress(0);
+        mediaPlayer.seekTo(0);
     }
 
     public void next(View view) {
+        seekBar.setProgress(mediaPlayer.getDuration());
+        mediaPlayer.seekTo(mediaPlayer.getDuration());
+        mediaPlayer.pause();
+        playPauseIcon.setImageResource(R.drawable.ic_baseline_play_arrow_24_purple);
     }
 
     public void play(View view) {
